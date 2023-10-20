@@ -93,7 +93,7 @@ contract Voting is Ownable {
 
     function vote(uint proposalId) external {
         Voter storage voter = voters[msg.sender];
-        require(voter.isRegistered, "Voteur n'est pas enregistre");
+        require(voter.isRegistered, "Voteur n est pas enregistre");
         require(!voter.hasVoted, "Voteur a deja vote");
         require(proposalId < proposals.length, "ID de propositon, invalide");
         voter.hasVoted = true;
